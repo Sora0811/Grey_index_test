@@ -1,0 +1,27 @@
+/* Case 02 presentation. The image is never cropped; portrait screens pan. */
+body{background:#252d2b}.brand,.desktop-note{display:none}
+.game{width:min(100%,1200px);height:100svh;min-height:520px;max-height:none;margin:0 auto!important;background:#f4f0e5;display:flex;flex-direction:column;overflow:hidden}
+.top{position:relative;top:auto;left:auto;right:auto;padding:12px 16px 0;flex-shrink:0;order:0}
+.top button{font-size:13px;padding:0 12px;min-height:44px}
+.location{position:relative;top:auto;left:auto;padding:10px 20px 0;order:1;flex-shrink:0}
+.location small{font-size:10px;letter-spacing:.13em}.location h2{font-size:23px;line-height:1.3}.location p{font-size:13px;margin:4px 0}
+.scene-tools{order:2;display:flex;align-items:center;justify-content:space-between;padding:4px 16px;gap:8px;font-size:12px;color:#55665d;flex-shrink:0}
+.scene-tools>div{display:flex;gap:4px}.scene-tools button{width:44px;min-height:44px;border:1px solid #b8b8a5;border-radius:10px;background:#eeeade;color:#263b3c;font-size:20px}.scene-tools button:disabled{opacity:.3;cursor:default}
+.scene-window{position:relative;order:3;flex:1;min-height:260px;overflow:auto;overscroll-behavior-x:contain;background:#393f36;scrollbar-width:thin;scrollbar-color:#ab976c #393f36;outline-offset:-4px}
+.scene{position:relative;inset:auto;aspect-ratio:1672/941;margin:0 auto;flex-shrink:0;background:#393f36}
+.scene-image{display:block;width:100%;height:auto;pointer-events:none;user-select:none}
+.hotspot.street-point{display:flex;align-items:flex-end;justify-content:center;min-width:44px;min-height:44px;border:1px solid transparent;border-radius:12px;padding:0 0 2px;z-index:2}
+.street-point .mark{font-size:11px;line-height:1.5;padding:3px 7px;border-radius:12px;background:#fcf6e8ed;color:#293d36;box-shadow:0 2px 8px #0005;pointer-events:none}
+.street-point:hover,.street-point:focus-visible{background:#fff2;border-color:#f7deb2}.street-point.selected{border-color:#efd39b;background:#fff1}
+.cargo{position:absolute;left:66%;top:64%;width:11%;transform:rotate(5deg);z-index:1;pointer-events:none;display:grid;gap:3px}
+.cargo span{display:block;background:#e9d6a9f5;border:1px solid #725a36;color:#4b3825;font:600 clamp(10px,1.1vw,14px)/1.4 system-ui,sans-serif;text-align:center;padding:2px;box-shadow:1px 2px 3px #0004;border-radius:2px;white-space:nowrap}
+.message{position:relative;order:4;bottom:auto;left:auto;right:auto;width:calc(100% - 24px);margin:12px;padding:14px 16px;flex-shrink:0}
+.sheet{position:fixed;left:max(0px,calc((100vw - 1200px)/2));right:max(0px,calc((100vw - 1200px)/2));max-height:70svh;padding:12px 20px max(24px,env(safe-area-inset-bottom))}
+.shade{position:fixed}.popover{position:fixed;top:72px;left:max(12px,calc((100vw - 560px)/2));right:max(12px,calc((100vw - 560px)/2));max-height:75svh}
+.notebook{position:fixed;left:max(0px,calc((100vw - 760px)/2));right:max(0px,calc((100vw - 1200px)/2));padding:20px;box-shadow:-20px 0 40px #0003}
+@media(max-width:700px){
+ .game{height:100svh;min-height:520px}.top{padding:8px 12px 0}.location{padding:8px 16px 0}.location h2{font-size:21px}.location p{font-size:12px}
+ .scene-tools{padding:0 12px}.scene-window{flex:1;min-height:260px;overflow-y:hidden}.scene{height:100%;aspect-ratio:auto}.scene-image{height:100%;width:100%}
+ .message{margin:8px 12px max(8px,env(safe-area-inset-bottom));padding:10px 12px}.notebook{left:0;right:0}.cargo span{font-size:11px}
+}
+@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important}}
